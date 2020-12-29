@@ -7,7 +7,11 @@ export async function listOrders(userid) {
     const where = {
       userid,
     };
-    return await Order.findAll({ where });
+
+    return (await Order.findAll({ where })).map(order => {
+      order.products = JSON.parse(order.products);
+      return order;
+    });
   } catch (error) {
     /**
      * Ao rejeitar a Promise com um erro, este será
