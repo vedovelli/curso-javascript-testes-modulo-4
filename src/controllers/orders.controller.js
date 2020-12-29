@@ -6,6 +6,11 @@ export async function index(req, res, next) {
     const orders = await req.service.listOrders(req.user.id);
     res.status(200).json({ orders });
   } catch (error) {
+    /**
+     * Os erros passados para o método next() serão capturados
+     * pelo gerenciador global de erros (ver app.js) e chegarão
+     * no client que fez a requisição
+     */
     next(error);
   }
 }
@@ -32,6 +37,10 @@ export async function create(req, res, next) {
   }
 }
 
+/**
+ * Este método é executado na rota como um middleware.
+ * Ver orders.router.js.
+ */
 export const validate = method => {
   switch (method) {
     case 'create': {

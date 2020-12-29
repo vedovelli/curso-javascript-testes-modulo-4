@@ -36,7 +36,7 @@ export function buildValidationErrors(condition) {
 
   jest.spyOn(validator, 'validationResult').mockReturnValueOnce({
     isEmpty,
-    array: jest.fn().mockReturnValueOnce(condition ? [1, 2, 3] : []),
+    array: jest.fn().mockReturnValueOnce(condition ? ['error1', 'error2'] : []),
   });
 
   return { isEmpty };

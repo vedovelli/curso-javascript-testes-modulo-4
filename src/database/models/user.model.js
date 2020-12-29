@@ -10,4 +10,5 @@ User.init(
   { sequelize, modelName: 'user' },
 );
 
+// Cria a tabela no banco de dados caso ainda não exista
 sync();

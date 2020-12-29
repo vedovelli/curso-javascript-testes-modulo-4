@@ -11,4 +11,5 @@ Order.init(
   { sequelize, modelName: 'order' },
 );
 
+// Cria a tabela no banco de dados caso ainda não exista
 sync();
