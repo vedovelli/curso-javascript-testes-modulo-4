@@ -1,2 +1,2 @@
 export * as homeController from './home.controller';
-export * as orderController from './order.controller';
+export * as ordersController from './orders.controller';

@@ -1,8 +1,8 @@
 import homeRouter from './home.router';
-import orderRouter from './order.router';
+import ordersRouter from './orders.router';
 import { serviceMiddleware, userMiddleware } from '@/middleware';
 
-const routers = [{ '/': homeRouter }, { '/order': orderRouter }];
+const routers = [{ '/': homeRouter }, { '/order': ordersRouter }];
 
 const middlewares = [serviceMiddleware.get, userMiddleware.get];
 
