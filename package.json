@@ -1,0 +1,53 @@
+{
+  "name": "express-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prestart": "babel ./src --out-dir build --ignore '**/*.spec.js'",
+    "start": "node ./build/bin/www",
+    "dev": "nodemon --exec babel-node ./src/bin/www",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "postpretty": "yarn lint --fix",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-async-handler": "^1.1.4",
+    "express-validator": "^6.9.0",
+    "http-errors": "^1.8.0",
+    "http-status-codes": "^2.1.4",
+    "morgan": "~1.9.1",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0",
+    "validator": "^13.5.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/register": "^7.12.10",
+    "@babel/runtime": "^7.12.5",
+    "@types/jest": "^26.0.19",
+    "@types/supertest": "^2.0.10",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "jest-watch-typeahead": "^0.6.1",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "supertest": "^6.0.1"
+  }
+}

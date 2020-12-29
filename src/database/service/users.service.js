@@ -1,0 +1,31 @@
+import { appError } from '@/utils';
+import { logger } from '@/utils';
+import { User } from '@/database/models/user.model';
+
+export async function listUsers() {
+  try {
+    return await User.findAll();
+  } catch (error) {
+    return Promise.reject(appError('Failed to retrieve users'));
+  }
+}
+
+export async function findOrSave(email) {
+  try {
+    logger.info(`User located or created with email: ${email}`);
+    return await User.findOrCreate({ where: { email } });
+  } catch (error) {
+    return Promise.reject(
+      appError(`Failed to retrieve or save user with email: ${email}`),
+    );
+  }
+}
+
+export async function saveUser(data) {
+  if (!data) {
+    return Promise.reject(appError('Failed to save user'));
+  }
+  return await User.create({
+    email: data.email,
+  });
+}
