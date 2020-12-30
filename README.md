@@ -1,5 +1,7 @@
 ## API REST com Express
 
+![Arquitetura](https://github.com/vedovelli/curso-javascript-testes-modulo-4/blob/master/support/Architecture.jpg?raw=true)
+
 Este projeto é parte integrate do curso **Aprenda a Testar Aplicações Javascript** (https://javascript.tv.br) e dá suporte ao módulo 4: _desenvolvimento e testes server side com Node.js e Express_.
 
 ### Ferramentas Base
