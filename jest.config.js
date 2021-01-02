@@ -7,12 +7,7 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^test/(.*)$': '<rootDir>/test/$1',
   },
-  collectCoverageFrom: [
-    '<rootDir>/src/controllers/**/*.js',
-    '<rootDir>/src/database/service/**/*.js',
-    '<rootDir>/src/middleware/**/*.js',
-    '<rootDir>/src/routes/**/*.js',
-  ],
+  collectCoverageFrom: ['<rootDir>/src/**/*.js'],
   watchPlugins: [
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
