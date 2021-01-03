@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Model, DataTypes } from 'sequelize';
 import { sequelize, sync } from '.';
 
