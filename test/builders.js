@@ -4,14 +4,13 @@ import userStub from 'test/stubs/user.json';
 import orderStub from 'test/stubs/order.json';
 
 export function buildReq({ user = buildUser(), ...overrides } = {}) {
-  const req = {
+  return {
     user,
     headers: { email: user.email },
     body: {},
     params: {},
     ...overrides,
   };
-  return req;
 }
 
 export function buildRes(overrides = {}) {
