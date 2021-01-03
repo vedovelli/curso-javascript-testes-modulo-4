@@ -2,6 +2,7 @@ import * as validator from 'express-validator';
 import { appError } from '@/utils';
 import userStub from 'test/stubs/user.json';
 import orderStub from 'test/stubs/order.json';
+import ordersStub from 'test/stubs/orders.json';
 
 export function buildReq({ user = buildUser(), ...overrides } = {}) {
   return {
@@ -47,4 +48,8 @@ export function buildUser() {
 
 export function buildOrder() {
   return orderStub;
+}
+
+export function buildOrders() {
+  return ordersStub;
 }
