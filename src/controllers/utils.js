@@ -7,6 +7,7 @@ import { StatusCodes } from 'http-status-codes';
  * erros para futura avaliação.
  */
 export const validationResponse = (res, errors) => {
-  logger.error('Validation failure', { errors: errors.array() });
-  res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({ errors: errors.array() });
+  const errorList = errors.array();
+  logger.error('Validation failure', { errors: errorList });
+  res.status(StatusCodes.UNPROCESSABLE_ENTITY).json({ errors: errorList });
 };
