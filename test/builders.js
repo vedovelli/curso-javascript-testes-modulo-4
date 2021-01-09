@@ -4,8 +4,19 @@ import userStub from 'test/stubs/user.json';
 import orderStub from 'test/stubs/order.json';
 import ordersStub from 'test/stubs/orders.json';
 import * as service from '@/database/service';
+import app from '@/app';
+import supertest from 'supertest';
 
 jest.mock('@/database/service');
+
+export function buildCall(endpoint, method = 'get', body = null) {
+  const user = buildUser();
+  const request = supertest(app);
+
+  jest.spyOn(service, 'findOrSave').mockResolvedValue([user]);
+
+  return request[method](endpoint).send(body).set('email', user.email);
+}
 
 export function buildReq({ user = buildUser(), ...overrides } = {}) {
   return {
