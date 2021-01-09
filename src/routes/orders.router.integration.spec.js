@@ -1,5 +1,6 @@
 import * as service from '@/database/service';
-import { buildCall, buildOrders, buildUser } from 'test/builders';
+import { buildOrders } from 'test/builders';
+import { buildCall } from 'test/builders.integration';
 
 jest.mock('@/database/service');
 
